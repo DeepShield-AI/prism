@@ -1,0 +1,19 @@
+[package]
+name = "prism-core"
+authors.workspace = true
+edition.workspace = true
+publish.workspace = true
+rust-version.workspace = true
+version.workspace = true
+
+[lints]
+workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+prism-event.workspace = true
+
+bytes.workspace = true
+serde_json.workspace = true

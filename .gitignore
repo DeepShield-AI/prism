@@ -1,0 +1,59 @@
+# Rust
+cargo-timing*.html
+**/*.rs.bk
+target
+tests/data/wasm/*/target
+bench_output.txt
+Cargo.lock
+
+# Python
+*.pyc
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# macOS
+.DS_Store
+
+# Emacs
+.dir-locals.el
+
+# Temporary files
+tmp/
+*.tmp
+*~
+sample.log
+
+# Profiling tools
+heaptrack.*
+massif.*
+
+# Checkpoints
+checkpoints/*
+
+# Docker
+**/Dockerfile~
+**/Dockerfile.*~
+.dockerignore
+
+# Docker Compose
+docker-compose.override.yml
+docker-compose.override.*.yml
+**/compose-temp-*.yaml
+
+# Compose project volume mounts
+volumes/
+*.volume/
+
+# Environment variable files (can contain secrets)
+*.env
+.env.*
+
+# LLM tools
+copilot-instructions.md
+error.log
+tmp.json
+
+output/
+todo.txt

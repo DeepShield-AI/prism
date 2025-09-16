@@ -1,0 +1,22 @@
+[package]
+name = "prism-event"
+authors.workspace = true
+edition.workspace = true
+publish.workspace = true
+rust-version.workspace = true
+version.workspace = true
+
+[lints]
+workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+bytes.workspace = true
+chrono.workspace = true
+cow.workspace = true
+metrics = { version = "0.24.2" }
+portable-atomic.workspace = true
+serde.workspace = true
+serde_json.workspace = true

@@ -1,0 +1,25 @@
+[package]
+name = "prism-sender"
+authors.workspace = true
+edition.workspace = true
+publish.workspace = true
+rust-version.workspace = true
+version.workspace = true
+
+[lints]
+workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+prism-core.workspace = true
+prism-runtime.workspace = true
+codec.workspace = true
+
+bytes.workspace = true
+chrono.workspace = true
+log.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+tokio.workspace = true

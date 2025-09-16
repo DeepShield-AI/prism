@@ -1,0 +1,32 @@
+[package]
+name = "prism-metric"
+authors.workspace = true
+edition.workspace = true
+publish.workspace = true
+rust-version.workspace = true
+version.workspace = true
+
+[lints]
+workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+prism-core.workspace = true
+prism-cpu.workspace = true
+prism-disk.workspace = true
+prism-event.workspace = true
+prism-memory.workspace = true
+prism-metric-common.workspace = true
+prism-metric-utils.workspace = true
+prism-network.workspace = true
+prism-runtime.workspace = true
+
+log.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+uom.workspace = true
+# TODO: remove this
+async-trait = { version = "0.1.89", default-features = false }
+tokio-stream = { version = "0.1.17", default-features = false, features = ["net", "sync", "time", "io-util"] }
