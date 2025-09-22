@@ -1,0 +1,25 @@
+[package]
+name = "prism-disk-ebpf"
+version = "0.1.0"
+readme = "README.md"
+edition = "2024"
+
+[dependencies]
+aya-ebpf = { version = "0.1.1", default-features = false }
+aya-log-ebpf = { version = "0.1.1", default-features = false }
+# metric-common = { path = "../metric-common", default-features = false }
+# ebpf-common = { path = "../ebpf-common", default-features = false }
+
+[[bin]]
+name = "prism_disk_ebpf"
+path = "src/main.rs"
+
+[lib]
+name = "prism_disk_ebpf"
+path = "src/lib.rs"
+
+[workspace]
+members = []
+
+[features]
+debug = []
