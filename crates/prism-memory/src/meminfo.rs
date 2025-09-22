@@ -114,7 +114,7 @@ pub struct MemInfo {
 	// TODO: SecPageTables is ignored because it don't exist on docs.
 	/// (since Linux 2.6.18)
 	/// NFS pages sent to the server, but not yet committed to stable storage.
-	#[arg(unit = kilobyte)]
+	#[arg(key = "NFS_Unstable", unit = kilobyte)]
 	NFS_Unstable: Information,
 	/// (since Linux 2.6.18)
 	/// Memory used for block device "bounce buffers".
@@ -146,7 +146,7 @@ pub struct MemInfo {
 	/// allocations which would exceed the CommitLimit will not be permitted.
 	/// This is useful if one needs to guarantee that processes will not fail
 	/// due to lack of memory once that memory has been successfully allocated.
-	#[arg(unit = kilobyte)]
+	#[arg(key = "Committed_AS", unit = kilobyte)]
 	Committed_AS: Information,
 	/// Total size of vmalloc memory area.
 	#[arg(unit = kilobyte)]
