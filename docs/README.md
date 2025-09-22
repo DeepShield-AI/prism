@@ -19,6 +19,7 @@ cargo install mdbook
 ```
 To build and serve the documentation, run
 ```bash
+cd docs
 mdbook serve --open
 ```
 Then open your browser and go to `http://localhost:3000`
