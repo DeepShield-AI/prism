@@ -1,5 +1,4 @@
 use super::CsvEncoder;
-use csv::Writer;
 use csv_core::{QuoteStyle, Terminator, WriterBuilder};
 /// Builds a [`CsvEncoder`] with various configuration knobs.
 ///

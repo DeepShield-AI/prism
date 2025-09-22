@@ -1,7 +1,7 @@
 use super::{Collector, MetricError, constants::*};
+use log::warn;
 use prism_disk::diskstat;
 use prism_event::{gauge, metric::Metric};
-use log::warn;
 use std::io;
 use uom::si::{information::byte, time::millisecond};
 
@@ -96,7 +96,7 @@ impl Collector for DiskCollector {
 				}
 			},
 			Err(error) => {
-				warn!("Failed to collect disk metrics: {}", error);
+				warn!("Failed to collect disk metrics: {error}");
 				return Err(io::Error::last_os_error().into());
 			},
 		}

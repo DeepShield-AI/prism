@@ -51,7 +51,7 @@ impl Runtime {
 		for id in 0..self.threads {
 			let mut builder = Builder::new_current_thread();
 			let mut builder =
-				builder.thread_name_fn(move || format!("prism-pool-{}", id)).enable_all();
+				builder.thread_name_fn(move || format!("prism-pool-{id}")).enable_all();
 			if cfg!(target_os = "linux") && cfg!(feature = "ebpf") {
 				builder = builder.on_thread_start(|| unsafe {
 					let rc = libc::unshare(libc::CLONE_FS);

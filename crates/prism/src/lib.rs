@@ -5,8 +5,8 @@
 #[global_allocator]
 static ALLOC: tikv_jemallocator::Jemalloc = tikv_jemallocator::Jemalloc;
 pub use agent::Agent;
-pub use prism_core::Module;
 pub use error::AgentError;
+pub use prism_core::Module;
 
 mod agent;
 // #[cfg(feature = "ebpf")]

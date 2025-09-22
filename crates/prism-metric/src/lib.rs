@@ -1,10 +1,10 @@
+pub use error::MetricError;
+use host::HostCollector;
+use log::{info, warn};
 use prism_core::Module;
 use prism_event::metric::Metric;
 use prism_metric_common::init_roots;
 use prism_runtime::handle;
-pub use error::MetricError;
-use host::HostCollector;
-use log::{info, warn};
 use std::{
 	mem,
 	sync::{

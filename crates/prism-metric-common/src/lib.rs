@@ -11,7 +11,7 @@ pub fn init_roots() {
 	INIT.call_once(|| {
 		match std::env::var_os("PROCFS_ROOT") {
 			Some(procfs_root) => {
-				info!("PROCFS_ROOT is set in envvars. Using custom: {:?} for procfs.", procfs_root);
+				info!("PROCFS_ROOT is set in envvars. Using custom: {procfs_root:?} for procfs.");
 				set_procfs_root(std::path::PathBuf::from(&procfs_root));
 			},
 			None => info!("PROCFS_ROOT is unset. Using default '/proc' for procfs root."),
@@ -19,7 +19,7 @@ pub fn init_roots() {
 
 		match std::env::var_os("SYSFS_ROOT") {
 			Some(sysfs_root) => {
-				info!("SYSFS_ROOT is set in envvars. Using custom: {:?} for sysfs.", sysfs_root);
+				info!("SYSFS_ROOT is set in envvars. Using custom: {sysfs_root:?} for sysfs.");
 				set_sysfs_root(std::path::PathBuf::from(&sysfs_root));
 			},
 			None => info!("SYSFS_ROOT is unset. Using default '/sys' for sysfs root."),

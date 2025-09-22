@@ -1,9 +1,9 @@
-use prism_core::{Module, sender::Sendable};
-use prism_runtime::handle;
 use bytes::BytesMut;
 use codec::encode::Encoder;
 pub use error::SendError;
 use log::{debug, info, warn};
+use prism_core::{Module, sender::Sendable};
+use prism_runtime::handle;
 use std::sync::{
 	Arc,
 	atomic::{AtomicBool, Ordering},
@@ -76,7 +76,7 @@ where
 						debug!("Sending message");
 						let mut encoded = BytesMut::new();
 						encoder.encode(message, &mut encoded)?;
-						debug!("Encoded message: {:?}", encoded);
+						debug!("Encoded message: {encoded:?}");
 						sender.send(encoded).await?;
 					},
 					None => {

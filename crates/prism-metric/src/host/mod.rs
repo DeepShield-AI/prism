@@ -1,10 +1,10 @@
 use super::{Collector, MetricError};
-use prism_event::metric::Metric;
 use cpu::CpuCollector;
 use disk::DiskCollector;
 use log::warn;
 use memory::MemoryCollector;
 use network::NetworkCollector;
+use prism_event::metric::Metric;
 
 mod constants;
 mod cpu;

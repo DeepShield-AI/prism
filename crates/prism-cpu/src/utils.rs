@@ -1,7 +1,6 @@
-use uom::si::{f64::Time, time};
-
 use crate::CpuMetricError;
 use std::{io, sync::OnceLock};
+use uom::si::{f64::Time, time};
 
 static CLOCK_TICKS: OnceLock<f64> = OnceLock::new();
 

@@ -1,7 +1,7 @@
 use super::{Collector, MetricError, constants::*};
+use log::warn;
 use prism_event::{gauge, metric::Metric};
 use prism_network::netdev::interfaces;
-use log::warn;
 use std::io;
 use uom::si::information::byte;
 
@@ -75,7 +75,7 @@ impl Collector for NetworkCollector {
 				}
 			},
 			Err(error) => {
-				warn!("Failed to collect network metrics: {}", error);
+				warn!("Failed to collect network metrics: {error}");
 				return Err(io::Error::last_os_error().into());
 			},
 		}

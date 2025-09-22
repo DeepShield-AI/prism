@@ -1,7 +1,7 @@
-use prism_runtime::handle;
 use futures::Stream;
 use futures_util::TryStreamExt;
 use log::error;
+use prism_runtime::handle;
 use std::{io, path::Path, str::FromStr};
 use tokio::{
 	fs::File,
@@ -91,7 +91,7 @@ pub fn filter_result<T, E>(result: Result<T, E>, message: &'static str) -> Optio
 where
 	E: std::error::Error,
 {
-	result.map_err(|error| error!("{}: {}", message, error)).ok()
+	result.map_err(|error| error!("{message}: {error}")).ok()
 }
 
 fn next_or<E, It>(it: &mut It) -> Result<It::Item, E>

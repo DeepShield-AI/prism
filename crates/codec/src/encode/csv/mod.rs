@@ -1,7 +1,7 @@
 use super::{CodecEncodeError, Encoder};
-use prism_core::sender::Sendable;
 use bytes::BytesMut;
 use csv_core::{WriteResult, Writer};
+use prism_core::sender::Sendable;
 mod builder;
 pub use builder::CsvEncoderBuilder;
 use bytes::{BufMut, buf::UninitSlice};

@@ -1,10 +1,10 @@
 use super::AgentError;
+use codec::encode::csv::CsvEncoderBuilder;
+use log::{info, warn};
 use prism_core::Module;
 use prism_metric::MetricCollector;
 use prism_runtime::handle;
 use prism_sender::{Sender, file::FileSender};
-use codec::encode::csv::CsvEncoderBuilder;
-use log::{info, warn};
 use tokio::{
 	sync::{mpsc, watch},
 	task::JoinHandle,
@@ -80,11 +80,11 @@ impl Module for Agent {
 				Ok(Ok(())) => info!("Agent finished"),
 				Ok(Err(e)) => {
 					let _ = self.state_tx.send(State::Failed);
-					warn!("Agent returned error: {:?}", e);
+					warn!("Agent returned error: {e:?}");
 				},
 				Err(e) => {
 					let _ = self.state_tx.send(State::Failed);
-					warn!("Agent join error: {:?}", e);
+					warn!("Agent join error: {e:?}");
 				},
 			}
 		}

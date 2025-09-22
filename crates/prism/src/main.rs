@@ -1,6 +1,6 @@
-use prism::{Agent, Module};
 use clap::Parser;
 use log::info;
+use prism::{Agent, Module};
 use tokio::signal;
 
 #[derive(Debug, Parser)]

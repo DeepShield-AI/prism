@@ -1,7 +1,7 @@
 use super::{Collector, MetricError, constants::*};
+use log::warn;
 use prism_event::{gauge, metric::Metric};
 use prism_memory::*;
-use log::warn;
 use std::io;
 use uom::si::information::kilobyte;
 
@@ -57,7 +57,7 @@ impl Collector for MemoryCollector {
 				buffer.push(gauge!(VMALLOC_CHUNK, meminfo.get_VmallocChunk().get::<kilobyte>()));
 			},
 			Err(error) => {
-				warn!("Failed to collect memory metrics: {}", error);
+				warn!("Failed to collect memory metrics: {error}");
 				return Err(io::Error::last_os_error().into());
 			},
 		}
@@ -182,7 +182,7 @@ impl Collector for MemoryCollector {
 				buffer.push(gauge!(BALLOON_MIGRATE, vmstat.get_balloon_migrate()));
 			},
 			Err(error) => {
-				warn!("Failed to collect vmstat metrics: {}", error);
+				warn!("Failed to collect vmstat metrics: {error}");
 				return Err(io::Error::last_os_error().into());
 			},
 		}

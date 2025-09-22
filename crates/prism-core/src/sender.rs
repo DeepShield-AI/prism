@@ -1,5 +1,5 @@
-use prism_event::metric::Metric;
 use bytes::BytesMut;
+use prism_event::metric::Metric;
 
 /// A abstraction for sending data and serialize data
 pub trait Sendable: Send + 'static {
