@@ -2,14 +2,17 @@
 resolver = "2"
 members = [
     "crates/*",
-    "libs/*",
+    # "libs/*",
     "xtask",
+    "tests/*"
 ]
 exclude = [
     "crates/prism-cpu-ebpf",
+    "crates/prism-disk-ebpf",
     "crates/prism-memory-ebpf",
+    "crates/prism-network-ebpf"
 ]
-default-members = ["crates/prism"]
+default-members = ["crates/prism", "tests/*"]
 
 [workspace.package]
 authors = ["smore.ioki@gmail.com"]
@@ -40,20 +43,27 @@ prism-metric-utils = { path = "crates/prism-metric-utils" }
 codec = { path = "crates/codec" }
 cow = { path = "crates/cow", features = ["serde"] }
 
+# test utils
+prism-fixtures = { path = "tests/prism-fixtures" }
+test-utils = { path = "tests/test-utils" }
+
 # other crates
 anyhow = { version = "1.0.98", default-features = false }
+approx = { version = "0.5.1", default-features = false }
 arc-swap = { version = "1.7.1", default-features = false }
 bytes = { version = "1.10.1", default-features = false }
 cfg-if = { version = "1.0.3", default-features = false }
-clap = { version = "4.5.45", default-features = false, features = ["color", "derive", "std", "error-context"] }
+clap = { version = "4.5.45", default-features = false, features = ["color", "derive", "std", "error-context", "help", "usage"] }
 chrono = { version = "0.4.42", default-features = false, features = ["clock", "serde"] }
 libc = { version = "1.0.0-alpha.1", default-features = false }
 log = { version = "0.4.28", default-features = false, features = ["kv"] }
 nom = { version = "8.0.0", default-features = false, features = ["alloc"] }
 paste = { version = "1.0.15", default-features = false }
 portable-atomic = { version = "1.11.1", default-features = false }
+pretty_assertions = { version= "1.4.1", default-features = false, features = ["alloc"] }
 proc-macro2 = { version = "1.0.101" }
 quote = { version = "1.0.40" }
+rand = { version = "0.10.0-rc.0", default-features = false, features = ["std", "std_rng"] }
 serde = { version = "1.0.219", default-features = false, features = ["derive"] }
 serde_json = { version = "1.0.145", default-features = false, features = ["alloc"] }
 syn = { version = "2.0.106" }
