@@ -70,15 +70,15 @@ struct Opts {
 		short = 'i',
 		long,
 		global = true,
-		help = "Ignore eBPF related tasks",
-		default_value_t = false
+		default_value_t = false,
+		help = "Ignore eBPF related tasks"
 	)]
 	pub ignore_ebpf: bool,
 	#[arg(
 		long = "ebpf-dirs",
 		value_delimiter = ',',
         // , crates/net_ebpf, crates/disk_ebpf
-		default_values = ["crates/prism-cpu-ebpf", "crates/prism-memory-ebpf"],
+		default_values = ["crates/prism-cpu-ebpf", "crates/prism-memory-ebpf", "crates/prism-disk-ebpf"],
 		requires_if("false", "ignore-ebpf"),
 		help = "Path to the directories containing eBPF programs"
 	)]
