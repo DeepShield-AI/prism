@@ -11,7 +11,8 @@
     "rust-analyzer.linkedProjects": [
         "Cargo.toml",
         "crates/prism-cpu-ebpf/Cargo.toml",
-        "crates/prism-memory-ebpf/Cargo.toml"
+        "crates/prism-memory-ebpf/Cargo.toml",
+        "crates/prism-disk-ebpf/Cargo.toml",
     ],
     // no need to cargo check in every workspace member
     // cargo xtask check does it for us
