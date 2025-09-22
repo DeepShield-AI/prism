@@ -56,4 +56,4 @@ error.log
 tmp.json
 
 output/
-todo.txt
+*.md
