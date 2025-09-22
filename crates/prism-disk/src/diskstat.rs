@@ -7,11 +7,16 @@ use uom::si::{
 	information, time,
 };
 
-const DISK_SECTOR_SIZE: u64 = 512;
+pub const DISK_SECTOR_SIZE: u64 = 512;
 
 // Helper functions for field processing
 fn sectors_to_bytes(sectors: u64) -> Information {
-	Information::new::<information::byte>((sectors * DISK_SECTOR_SIZE) as f64)
+	// Use checked multiplication to avoid overflow, fallback to f64 arithmetic
+	let bytes = sectors
+		.checked_mul(DISK_SECTOR_SIZE)
+		.map(|b| b as f64)
+		.unwrap_or_else(|| sectors as f64 * DISK_SECTOR_SIZE as f64);
+	Information::new::<information::byte>(bytes)
 }
 
 fn millis_to_time(millis: u64) -> Time {
