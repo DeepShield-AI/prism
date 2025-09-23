@@ -31,6 +31,6 @@ cargo run --bin procfs_integration_tests
 
 ## Documentation
 
-- **[User Guides](docs/)** - Configuration, testing, and usage
-- **[Development](docs/development.md)** - Architecture and contribution guide  
-- **[Testing Guide](TESTING.md)** - Quick testing reference
+- **[User Guides](docs/README.md)** - Configuration, testing, and usage
+- **[Development](docs/src/development.md)** - Architecture and contribution guide  
+- **[Testing Guide](docs/src/testing.md)** - Quick testing reference
